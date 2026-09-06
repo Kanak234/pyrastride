@@ -38,7 +38,7 @@ def _iter_sarif_results(doc: dict[str, Any]):
     boundary, so it validates shape instead of trusting it.
     """
     if not isinstance(doc, dict):
-        raise ValueError("SARIF root is not an object")
+        raise TypeError("SARIF root is not an object")
     for run in doc.get("runs", []) or []:
         for res in run.get("results", []) or []:
             yield res, run

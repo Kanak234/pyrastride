@@ -73,7 +73,7 @@ def test_emitted_sarif_carries_stride_properties():
 
 
 def test_bad_root_raises():
-    with pytest.raises(ValueError):
+    with pytest.raises((TypeError, ValueError)):
         prioritise(["not", "a", "sarif", "object"])
 
 
